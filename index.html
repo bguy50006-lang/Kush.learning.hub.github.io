@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Search & Games</title>
+
+<style>
+body{
+background:#0f172a;
+color:white;
+font-family:Arial;
+text-align:center;
+padding-top:60px;
+}
+
+input,select,button{
+padding:10px;
+font-size:16px;
+margin:5px;
+}
+
+.games{
+margin-top:40px;
+}
+
+.gamebtn{
+display:block;
+margin:10px auto;
+width:200px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Search & Games</h1>
+
+<input id="query" placeholder="Search the web">
+
+<select id="engine">
+<option value="duck">DuckDuckGo</option>
+<option value="brave">Brave</option>
+</select>
+
+<button onclick="search()">Search</button>
+
+<div class="games">
+
+<h2>Games</h2>
+
+<button class="gamebtn" onclick="openGame('https://chromedino.com')">Chrome Dino</button>
+
+<button class="gamebtn" onclick="openGame('https://playsnake.org')">Snake Game</button>
+
+<button class="gamebtn" onclick="openGame('https://2048game.com')">2048</button>
+
+<button class="gamebtn" onclick="openGame('https://tetris.com/play-tetris')">Tetris</button>
+
+</div>
+
+<script>
+
+function search(){
+let q=document.getElementById("query").value;
+let engine=document.getElementById("engine").value;
+
+if(engine==="duck"){
+window.location="https://duckduckgo.com/?q="+q;
+}
+
+if(engine==="brave"){
+window.location="https://search.brave.com/search?q="+q;
+}
+}
+
+function openGame(url){
+window.open(url,"_blank");
+}
+
+</script>
+
+</body>
+</html>
